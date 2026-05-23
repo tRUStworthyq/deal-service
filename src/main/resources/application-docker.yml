@@ -1,0 +1,37 @@
+spring:
+  flyway:
+    baseline-on-migrate: true
+    baseline-version: 0
+  datasource:
+    url: jdbc:postgresql://postgres-deal:5432/deal_db
+    username: deal_user
+    password: deal_pass
+  jpa:
+    hibernate:
+      ddl-auto: validate
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          jwk-set-uri: http://keycloak:8080/realms/sber-realm/protocol/openid-connect/certs
+
+server:
+  port: 8080
+
+app:
+  kafka:
+    bootstrap-servers: kafka:9092
+  grpc:
+    currency-service:
+      host: currency-service
+      port: 9090
+
+management:
+  zipkin:
+    tracing:
+      endpoint: http://jaeger:14268/api/traces
+
+logging:
+  logstash:
+    encoder:
+      destination: "logstash:5000"
