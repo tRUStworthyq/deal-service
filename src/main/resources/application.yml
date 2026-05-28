@@ -34,6 +34,10 @@ app:
     request-topic: risk-requests
     reply-topic: risk-responses
     reply-timeout-ms: 10000
+    client-events-topic: client-events
+    deal-events-topic: deal-events
+    risk-events-topic: risk-events
+    event-results-topic: entity-event-results
   grpc:
     currency-service:
       host: localhost

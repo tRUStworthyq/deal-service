@@ -1,5 +1,3 @@
--- Shared database owned by deal-service. All other services reference these tables via views.
-
 CREATE TABLE clients (
     id          VARCHAR(50)  PRIMARY KEY,
     full_name   VARCHAR(255) NOT NULL,
