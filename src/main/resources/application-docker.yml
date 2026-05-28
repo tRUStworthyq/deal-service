@@ -3,9 +3,9 @@ spring:
     baseline-on-migrate: true
     baseline-version: 0
   datasource:
-    url: jdbc:postgresql://postgres-deal:5432/deal_db
-    username: deal_user
-    password: deal_pass
+    url: jdbc:postgresql://postgres-deal:5432/${POSTGRES_DEAL_DB:deal_db}
+    username: ${POSTGRES_DEAL_USER:deal_user}
+    password: ${POSTGRES_DEAL_PASSWORD:deal_pass}
   jpa:
     hibernate:
       ddl-auto: validate
